@@ -9,13 +9,13 @@
 
 int print_number(unsigned int n)
 {
-    int count = 0;
+	int count = 0;
 
-    if (n / 10) /* si le nombre a plus d'un chiffre */
-        count += print_number(n / 10);
+	if (n / 10) /* si le nombre a plus d'un chiffre */
+		count += print_number(n / 10);
 
-    _putchar((n % 10) + '0');
-    count++;
+	_putchar((n % 10) + '0');
+	count++;
 
-    return (count);
+	return (count);
 }

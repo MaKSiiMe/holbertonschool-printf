@@ -1,4 +1,5 @@
 #include "main.h"
+#include "format.c"
 #include <stdarg.h> /* via_list */
 
 /**
@@ -25,18 +26,20 @@ int _printf(const char *format, ...)
 	/*	print_pointer,	%p */
 		print_percent	/* %% */
 	};
+	
+	if (!format) /* si string est NULL */
+			return (-1);
+	
 	va_start(args, format); /* initialise la liste */
 	for (i = 0; format[i] != '\0'; i++) /* parcourir le string 'format' */
 	{
-		if (!format) /* si string est NULL */
-			return (-1);
 		if (format[i] == '%' && format[i + 1]) /* si il y a un spécificateur */
 		{
 			int j = 0;
 
 			while (specifiers[j]) /* rechercher le bon spécificateur */
 			{
-				if (format[i + 1] == specifier[j])
+				if (format[i + 1] == specifiers[j])
 				{
 					count += functions[j](args); /* appelle la fonction qui correspont dans le tableau */
 					i++;
@@ -59,6 +62,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	va_end(args) /* libère la liste */
+	va_end(args); /* libère la liste */
 	return (count);
 }

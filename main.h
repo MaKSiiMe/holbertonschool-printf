@@ -1,8 +1,6 @@
 #ifdef MAIN
 #define MAIN
 
-#include <stddef.h>
-
 int _putchar(char c);
 int _printf(const char *format, ...);
 
@@ -14,5 +12,7 @@ int print_octal(va_list args);
 int print_hex(va_list args);
 int print_pointer(va_list args);
 int print_percent(va_list args);
+
+int print_number(unsigned int n);
 
 #endif

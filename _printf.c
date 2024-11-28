@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int count = 0; /* compter le nombre de caractere */
 	char *specifiers = "csdi%"; /* (spécificateurs supportés) 'scdiuoxXp%' */
-	va_list args;
+
 	int (*functions[])(va_list) = { /* tableau de pointers sur fonctions */
 		print_string,	/* %s */
 		print_char,	/* %c */
@@ -26,10 +26,12 @@ int _printf(const char *format, ...)
 	/*	print_pointer,	%p */
 		print_percent	/* %% */
 	};
-	
+
+	va_list args; /* liste des arguments */
+
 	if (!format) /* si string est NULL */
 			return (-1);
-	
+
 	va_start(args, format); /* initialise la liste */
 	for (i = 0; format[i] != '\0'; i++) /* parcourir le string 'format' */
 	{
@@ -60,7 +62,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			count++;
 		}
-		i++;
 	}
 	va_end(args); /* libère la liste */
 	return (count);

@@ -1,6 +1,9 @@
 #include "main.h"
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 /**
  * print_char - print char
  * @args: list of arguments
@@ -10,6 +13,6 @@
 int print_char(va_list args)
 {
 	char c = va_arg(args, int); /* on met le caractere args -> c */
-    _putchar(c);
-    return (1);
+
+	return(_putchar(c));
 }

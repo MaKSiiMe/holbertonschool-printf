@@ -45,6 +45,7 @@ Prints an integer number.
 The following examples show some usages of \fB_printf\fP:
 
 .TP
+<<<<<<< HEAD
 .B _printf("by %s.\n" , "bitcoin");
 STDOUT output: "by bitcoin".
 
@@ -55,6 +56,18 @@ STDOUT output: "bitcoin buy 90000" .
 .TP
 .B _printf("crypto %i", 34000);
 STDOUT output: "crypto 34000".
+=======
+.B _printf("Hel%co", 'l');
+STDOUT output: "Hello".
+
+.TP
+.B _printf("Hello %s", """World"");
+STDOUT output: "Hello World".
+
+.TP
+.B _printf("Hello %d", 12);
+STDOUT output: "Hello 12".
+>>>>>>> f342090a40dca42c81b77856f18ff4ca944755b2
 
 .SH AUTHORS
 .P

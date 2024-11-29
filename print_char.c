@@ -1,9 +1,5 @@
 #include "main.h"
 
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 /**
  * print_char - print char
  * @args: list of arguments

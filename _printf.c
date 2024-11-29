@@ -9,45 +9,34 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int count = 0; /* compter le nombre de caractere */
-	char *specifiers = "csdi%"; /* (spécificateurs supportés) 'scdiuoxXp%' */
-
-	int (*functions[])(va_list) = { /* tableau de pointers sur fonctions */
-		print_string,	/* %s */
-		print_char,	/* %c */
-		print_integer,	/* %d */
-		print_integer,	/* %i */
-		print_percent	/* %% */
-	};
-
+	int i, count = 0; /* compter le nombre de caractere */
 	va_list args; /* liste des arguments */
 
 	if (!format) /* si string est NULL */
 			return (-1);
 
 	va_start(args, format); /* initialise la liste */
+
 	for (i = 0; format[i] != '\0'; i++) /* parcourir le string 'format' */
 	{
-		if (format[i] == '%' && format[i + 1]) /* si il y a un spécificateur */
+		if (format[i] == '%') /* si il y a un spécificateur */
 		{
-			int j = 0;
+			if (format[i + 1] == '\0') /* si c'est la fin du string */
+				return (-1);
 
-			while (specifiers[j]) /* rechercher le bon spécificateur */
+			if (format[i + 1] == '%') /* si '%%' */
 			{
-				if (format[i + 1] == specifiers[j])
-				{
-					count += functions[j](args); /* appelle la fonction qui correspont dans le tableau */
-					i++;
-					break;
-				}
-				j++;
+				_putchar('%');
+				count++;
+				i++;
 			}
-			if (!specifiers[j]) /* si le spécifier est inconnu */
+			else /* sinon c'est un spécificateur */
 			{
-				_putchar(format[i]);
-				_putchar(format[i + 1]);
-				count += 2;
+				int (*func)(va_list) = specifiers_handler(format[i + 1]);
+				if (func) /* si il est valide */
+					count += func(args); /* appelle la fonction */
+				else /* si il est invalide */
+					return (-1);
 				i++;
 			}
 		}

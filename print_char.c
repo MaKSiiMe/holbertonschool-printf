@@ -10,5 +10,5 @@ int print_char(va_list args)
 {
 	char c = va_arg(args, int); /* on met le caractere args -> c */
 
-	return(_putchar(c));
+	return (_putchar(c));
 }

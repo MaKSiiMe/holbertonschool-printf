@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	va_list args; /* liste des arguments */
 
 	if (!format) /* si string est NULL */
-			return (-1);
+		return (-1);
 
 	va_start(args, format); /* initialise la liste */
 
@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 			else /* sinon c'est un spécificateur */
 			{
 				int (*func)(va_list) = specifiers_handler(format[i + 1]);
+
 				if (func) /* si il est valide */
 					count += func(args); /* appelle la fonction */
 				else /* si il est invalide */

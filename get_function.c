@@ -2,9 +2,9 @@
 #include <stddef.h>
 
 /**
- * get_spec_func - Entry point
- * @s: operator
- * Return: function pointer
+ * specifiers_handler - Entry point
+ * @specifier: operator
+ * Return: 0
  */
 
 int (*specifiers_handler(const char specifier))(va_list)

@@ -1,5 +1,4 @@
 #include "main.h"
-#include "format.c"
 #include <stdarg.h> /* via_list */
 
 /**

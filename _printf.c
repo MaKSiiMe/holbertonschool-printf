@@ -19,18 +19,13 @@ int _printf(const char *format, ...)
 		print_char,	/* %c */
 		print_integer,	/* %d */
 		print_integer,	/* %i */
-	/*	print_unsigned,	%u */
-	/*	print_octal,	%o */
-	/*	print_hex,	%x */
-	/*	print_hex,	%X */
-	/*	print_pointer,	%p */
 		print_percent	/* %% */
 	};
 
 	va_list args; /* liste des arguments */
 
 	if (!format) /* si string est NULL */
-		return (-1);
+			return (-1);
 
 	va_start(args, format); /* initialise la liste */
 	for (i = 0; format[i] != '\0'; i++) /* parcourir le string 'format' */

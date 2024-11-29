@@ -1,0 +1,61 @@
+.TH _PRINTF 1 "2024, NOVEMBER " "version 1.0" "User Commands"
+
+.\formatted name in bolt
+.SH NAME
+\fB_printf\fP - print formatted data to the standard output.
+
+.SH SYNOPSIS
+.P
+.B _printf(const char *format, ...)
+
+.SH DESCRIPTION
+.P
+The \fB_printf\fP writes formatted data to standard output (stdout). It processes additional arguments with the corresponding function and formats them before writing them to stdout.
+
+.SH RETURN VALUE
+.P
+On success, the total number of characters written is returned. On failure, -1 is returned.
+
+.SH SPECIFIERS
+.P
+The following specifiers are supported:
+
+.TP
+\fB%c\fP
+Prints a single character.
+
+.TP
+\fB%s\fP
+Prints a string.
+
+.TP
+\fB%%\fP
+Prints a literal '%' character.
+
+.TP
+\fB%d\fP
+Prints a decimal number.
+
+.TP
+\fB%i\fP
+Prints an integer number.
+
+.SH EXAMPLES
+.P
+The following examples show some usages of \fB_printf\fP:
+
+.TP
+.B _printf("by %s.\n" , "bitcoin");
+STDOUT output: "by bitcoin".
+
+.TP
+.B _printf("bitcoin sell %d", 90000);
+STDOUT output: "bitcoin buy 90000" .
+
+.TP
+.B _printf("crypto %i", 34000);
+STDOUT output: "crypto 34000".
+
+.SH AUTHORS
+.P
+Written by Didi Badr and TRUEL Maxime.

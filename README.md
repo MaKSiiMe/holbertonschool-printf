@@ -34,7 +34,7 @@ Pour exécuter ce projet, assurez-vous d'avoir les éléments suivants installé
 ``` c
 _print("Hello, World!\n");
 ```
-	Résultat:
+Résultat:
 ``` r
 Hello, World!
 ```
@@ -42,7 +42,7 @@ Hello, World!
 ``` c
 _print("Integer: %d, String: %s\n", 42, "Holberton");
 ```
-	Résultat:
+Résultat:
 ``` r
 Integer: 42, String: Holberton
 ```
@@ -50,7 +50,7 @@ Integer: 42, String: Holberton
 ``` c
 _print("Percent sign: %%\n");
 ```
-	Résultat:
+Résultat:
 ``` r
 Percent sign: %
 ```
@@ -58,7 +58,7 @@ Percent sign: %
 ## Man Page
 Une page de manuel est incluse pour décrire en détail l'utilisation et les spécificateurs supportés par `_printf`.
 Pour accéder à la page, utilisez :
-```man man_3_printf```
+```man man_3_printf.1```
 
 ## Testing
 Pour tester le projet, plusieurs méthodes sont disponibles :
